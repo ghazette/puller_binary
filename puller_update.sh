@@ -25,7 +25,14 @@ else
 fi
 
 rm "$HOME/.puller/puller"
-mv "$HOME/.puller_binary/puller" "$HOME/.puller/puller"
+
+system=$(uname)
+if [ $system == "Darwin" ]; then
+  mv "$HOME/.puller_binary/puller" "$HOME/.puller/puller"
+elif [ $system == "Linux" ]; then
+  mv "$HOME/.puller_binary/puller_linux" "$HOME/.puller/puller"
+fi
+
 rm -rf "$HOME/.puller_binary"
 
 echo ${GREEN}"\nMise à jour du client terminé."${RESTORE};
