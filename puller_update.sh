@@ -6,21 +6,21 @@ LGREEN=$(echo '\033[01;32m')
 
 #wait puller process to close
 sleep 1
-echo ${GREEN}"Puller début de la mise à jour"${RESTORE}
+echo ${GREEN}"Puller début de la mise à jour.\n"${RESTORE}
 
 #Check if git is installed
 git --version >/dev/null 2>&1 || { echo ${LRED}Arrêt de l\'installation :${RESTORE} git n\'est pas installé.; exit 1; }
 
-echo "Telechargement en cours...";
+echo "1 -> Telechargement en cours...";
 
 git clone https://github.com/kryme07/puller_binary.git $HOME/.puller_binary >/dev/null 2>&1
 
 #check if the cloned git directory exists
 if [ -f "$HOME/.puller_binary/puller" ];
 then
-  echo ${LGREEN}"Client téléchargé avec succès."${RESTORE};
+  echo ${LGREEN}"2 -> Client téléchargé avec succès."${RESTORE};
 else
-  echo ${LRED}"Le téléchargement a échoué (doits insuffissants ?)."${RESTORE};
+  echo ${LRED}"2 -> Le téléchargement a échoué (doits insuffissants ?)."${RESTORE};
   exit 1;
 fi
 
