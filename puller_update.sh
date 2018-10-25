@@ -13,7 +13,7 @@ git --version >/dev/null 2>&1 || { echo ${LRED}Arrêt de l\'installation :${REST
 
 echo "1 -> Telechargement en cours...";
 
-git clone https://github.com/kryme07/puller_binary.git $HOME/.puller_binary >/dev/null 2>&1
+git clone https://github.com/ghazette/puller_binary.git $HOME/.puller_binary >/dev/null 2>&1
 
 #check if the cloned git directory exists
 if [ -f "$HOME/.puller_binary/puller" ];
